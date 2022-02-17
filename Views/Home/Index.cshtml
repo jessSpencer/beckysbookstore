@@ -1,0 +1,17 @@
+﻿@{
+}
+
+@model List<Book>
+
+@foreach (Book b in Model)
+{
+    <li>@b.Title</li>
+    <li>@b.Author</li>
+    <li>@b.Publisher</li>
+    <li>@b.Isbn</li>
+    <li>@b.Classification</li>
+    <li>@b.Category</li>
+    <li>@b.PageCount</li>
+    <li>@b.Price</li>
+    <br />
+}
