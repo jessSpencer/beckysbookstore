@@ -1,7 +1,10 @@
 ﻿@{
+    ViewBag.Calc = 20 / 5;
 }
 
-@model List<Book>
+@model IQueryable<Book>
+
+<h1>@ViewBag.Calc</h1>
 
 @foreach (Book b in Model)
 {
@@ -15,3 +18,7 @@
     <li>@b.Price</li>
     <br />
 }
+
+<a asp-action="Index" asp-route-pageNum="1">1</a>
+<a asp-action="Index" asp-route-pageNum="2">2</a> 
+<a asp-action="Index" asp-route-pageNum="3">3</a>
