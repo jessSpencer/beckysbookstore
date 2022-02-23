@@ -19,7 +19,7 @@ namespace beckysbookstore.Controllers
         }
         public IActionResult Index(int pageNum = 1)
         {
-            int pageSize = 10;
+            int pageSize = 5;
 
             var bub = new BooksViewModel
             {
