@@ -50,6 +50,26 @@ namespace beckysbookstore
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute(
+                    "categorypage", 
+                    "{bookCat}/Page{pageNum}",
+                    new {Controller = "Home", action = "Index"}
+                    );
+
+                endpoints.MapControllerRoute(
+                    name: "Paging",
+                    pattern: "{pageNum}",
+                    defaults: new { Controller = "Home", action = "Index" }
+                    );
+
+                endpoints.MapControllerRoute(
+                    "category",
+                    "{bookCat}",
+                    new { Controller = "Home", action = "Index", pageNum = 1 }
+                    );
+
+
+
                 endpoints.MapDefaultControllerRoute();
             });
         }
