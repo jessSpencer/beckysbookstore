@@ -37,7 +37,7 @@ namespace beckysbookstore.Infrastructure
 
             TagBuilder final = new TagBuilder("div");
 
-            for (int i = 1; i < PageChange.TotalPages; i++)
+            for (int i = 1; i <= PageChange.TotalPages; i++)
             {
                 TagBuilder tb = new TagBuilder("a");
 
