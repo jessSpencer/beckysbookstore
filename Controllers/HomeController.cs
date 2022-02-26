@@ -31,7 +31,8 @@ namespace beckysbookstore.Controllers
 
                 PageInfo = new PageInfo
                 {
-                    TotalNumBooks = repo.Books.Count(),
+                    TotalNumBooks = 
+                    (bookCat == null ? repo.Books.Count() : repo.Books.Where(x => x.Category == bookCat).Count()),
                     BooksPerPage = pageSize,
                     CurrentPage = pageNum
                 }
