@@ -18,7 +18,7 @@ namespace beckysbookstore.Components
 
         public IViewComponentResult Invoke()
         {
-            ViewBag.SelectedType = RouteData?.Values["projectType"];
+            ViewBag.SelectedType = RouteData?.Values["bookCat"];
             var categorys = repo.Books
                 .Select(x => x.Category)
                 .Distinct()
