@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace beckysbookstore.Infrastructure
 {
     [HtmlTargetElement("div", Attributes = "page-change")]
-    public class PaginationTagHelper :TagHelper
+    public class PaginationTagHelper : TagHelper
     {
         private IUrlHelperFactory uhf;
 
@@ -37,7 +37,7 @@ namespace beckysbookstore.Infrastructure
 
             TagBuilder final = new TagBuilder("div");
 
-            for (int i = 1; i < PageChange.TotalPages; i++)
+            for (int i = 1; i <= PageChange.TotalPages; i++)
             {
                 TagBuilder tb = new TagBuilder("a");
 
