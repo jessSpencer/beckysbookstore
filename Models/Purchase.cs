@@ -34,6 +34,11 @@ namespace beckysbookstore.Models
 
         public string Zip { get; set; }
 
+        public string Country { get; set; }
+
+        public bool Anonymous { get; set; }
+
+
 
 
 
