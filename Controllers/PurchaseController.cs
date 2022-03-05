@@ -9,36 +9,37 @@ namespace beckysbookstore.Controllers
 {
     public class PurchaseController : Controller
     {
+        private IPurchaseRepository repo { get; set; }
+        private Basket basket { get; set; }
+        public PurchaseController(IPurchaseRepository temp, Basket b)
+        {
+            repo = temp;
+            basket = b;
+        }
+        [HttpGet]
         public IActionResult Checkout()
         {
             return View(new Purchase());
         }
-        //private IPurchaseRepository repo { get; set; }
-        //private Basket basket { get; set; }
-        //public PurchaseController (IPurchaseRepository temp, Basket b)
-        //{
-        //    repo = temp;
-        //    basket = b;
-        //}
-        //public IActionResult Index()
-        //{
-        //    return View(new Purchase());
-        //}
-        //[HttpPost]
-        //public IActionResult Checkout(Purchase purchase)
-        //{
-        //    if (basket.Items.Count() == 0)
-        //    {
-        //        ModelState.AddModelError("", "Sorry");
-        //    }
-        //    if (ModelState.IsValid)
-        //    {
-        //        purchase.Lines = basket.Items.ToArray();
-        //        repo.SavePurchase(purchase);
-        //        basket.ClearBasket();
+        [HttpPost]
+        public IActionResult Checkout(Purchase purchase)
+        {
+            if (basket.Items.Count() == 0)
+            {
+                ModelState.AddModelError("", "Sorry but your basket is empty");
+            }
+            if (ModelState.IsValid)
+            {
+                purchase.Lines = basket.Items.ToArray();
+                repo.SavePurchase(purchase);
+                basket.ClearBasket();
 
-        //        return View();
-        //    }
-        //}
+                return RedirectToPage("/PurchaseCompleted");
+            }
+            else
+            {
+                return View();
+            }
+        }
     }
 }

@@ -34,7 +34,7 @@ namespace beckysbookstore.Models
             Items.RemoveAll(x => x.Book.BookId == bok.BookId);
 
         }
-        public virtual void ClearBasker()
+        public virtual void ClearBasket()
         {
             Items.Clear();
         }

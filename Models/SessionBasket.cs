@@ -38,9 +38,9 @@ namespace beckysbookstore.Models
 
         }
 
-        public override void ClearBasker()
+        public override void ClearBasket()
         {
-            base.ClearBasker();
+            base.ClearBasket();
             Session.Remove("Basket");
 
         }

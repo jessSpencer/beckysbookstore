@@ -9,8 +9,8 @@ using beckysbookstore.Models;
 namespace beckysbookstore.Migrations
 {
     [DbContext(typeof(BookstoreContext))]
-    [Migration("20220303052605_AddPurchasesTable")]
-    partial class AddPurchasesTable
+    [Migration("20220304211948_purchasetable")]
+    partial class purchasetable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -93,7 +93,14 @@ namespace beckysbookstore.Migrations
                     b.Property<string>("AddressLine3")
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("Anonymous")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Country")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

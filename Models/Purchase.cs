@@ -34,6 +34,7 @@ namespace beckysbookstore.Models
 
         public string Zip { get; set; }
 
+        [Required(ErrorMessage = "Please enter the country: ")]
         public string Country { get; set; }
 
         public bool Anonymous { get; set; }

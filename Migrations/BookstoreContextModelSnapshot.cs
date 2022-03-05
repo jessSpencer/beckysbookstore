@@ -91,7 +91,14 @@ namespace beckysbookstore.Migrations
                     b.Property<string>("AddressLine3")
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("Anonymous")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Country")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
