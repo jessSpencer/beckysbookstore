@@ -9,7 +9,7 @@ using beckysbookstore.Models;
 namespace beckysbookstore.Migrations.AppIdentityDB
 {
     [DbContext(typeof(AppIdentityDBContext))]
-    [Migration("20220316201822_IdentitySetup")]
+    [Migration("20220317175753_IdentitySetup")]
     partial class IdentitySetup
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
