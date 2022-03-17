@@ -20,7 +20,7 @@ namespace beckysbookstore.Controllers
         }
 
         [HttpGet]
-        public IActionResult Index(string returnUrl)
+        public IActionResult Login(string returnUrl)
         {
             return View(new LoginModel { ReturnUrl = returnUrl });
         }
