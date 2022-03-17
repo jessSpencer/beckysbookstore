@@ -46,5 +46,12 @@ namespace beckysbookstore.Controllers
             ModelState.AddModelError("", "Invalid name or password");
             return View(loginModel);
         }
+
+        public async Task<RedirectResult> Logout (string returnUrl = "/")
+        {
+            await signInManager.SignOutAsync();
+
+            return Redirect(returnUrl);
+        }
     }
 }
